@@ -50,11 +50,12 @@ public class Point {
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (obj != null && getClass() == obj.getClass()) {
-            Point other = (Point) obj;
+    public boolean equals(Object o) {                       // Good implementation
+        if (o != null && getClass() == o.getClass()) {      // Checks for NULL and then uses getClass() to compare TYPE
+            Point other = (Point) o;
             return x == other.x && y == other.y;
+        } else {
+            return false;
         }
-        return false;
     }
 }
